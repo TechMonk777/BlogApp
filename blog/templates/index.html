@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Blog App
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'index.css' %}">
+<link rel="stylesheet" href="{% static 'posts.css' %}">
+
+{% endblock %}
+
+{% block body %}
+
+<section id="welcome">
+    <header>
+        <img src="{% static 'images/dev.png' %}" alt="Prasad - The Author Of This Blog" />
+        <h2>Prasad'S BLOG</h2>
+    </header>
+    <p>Hii, I'm Prasad and I love to do coding in Python</p>
+</section>
+<section id="latest-posts">
+    <h2>My Latest Posts</h2>
+    <ul>
+            {% for post in latest_posts %}
+                {% include 'include/post.html' %}
+            {% endfor %}
+    </ul>
+</section>
+{% endblock %}

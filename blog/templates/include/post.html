@@ -1,0 +1,9 @@
+{% load static %}
+<article class="post">
+    <a href="{% url 'post-detail' post.id %}">
+        <img src="{{post.img_name.url}}" alt="{{post.title}}" />
+        <div class="post__content">
+            <p>{{post.excert}}</p>
+        </div>
+    </a>
+</article>
